@@ -43,6 +43,7 @@ class HTTPSHandler(logging.Handler):
             'timestamp': record.created,
             'level': logging.getLevelName(record.levelno),
             'facility': self.facility or record.name,
+            'process_name': record.processName,
         }
 
     def emit(self, record):
